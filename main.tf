@@ -420,7 +420,7 @@ module "databricks" {
   resource_group_name = local.resource_group_name
   location            = var.location
 
-  application_id = module.app_identity[0].client_id
+  # application_id = module.app_identity[0].client_id
 
   tags = var.tags
 }

@@ -1,4 +1,4 @@
-resource "azurerm_databricks_workspace" "databricks_workspace" {
+resource "azurerm_databricks_workspace" "this" {
   name                = var.name
   location            = var.location
   resource_group_name = var.resource_group_name
@@ -7,10 +7,10 @@ resource "azurerm_databricks_workspace" "databricks_workspace" {
   tags = var.tags
 }
 
-resource "databricks_service_principal" "sp" {
-  application_id        = var.application_id
-  display_name          = var.name
-  allow_cluster_create  = true
-  databricks_sql_access = true
-  workspace_access      = true
-}
+# resource "databricks_service_principal" "sp" {
+#   application_id        = var.application_id
+#   display_name          = var.name
+#   allow_cluster_create  = true
+#   databricks_sql_access = true
+#   workspace_access      = true
+# }

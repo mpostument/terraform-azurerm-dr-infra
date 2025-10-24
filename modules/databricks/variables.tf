@@ -13,10 +13,10 @@ variable "name" {
   type        = string
 }
 
-variable "application_id" {
-  description = "Application (client) ID of service principal used by Datarobot for assigning permissions"
-  type        = string
-}
+# variable "application_id" {
+#   description = "Application (client) ID of service principal used by Datarobot for assigning permissions"
+#   type        = string
+# }
 
 variable "tags" {
   description = "A map of tags to add to all created resources"
