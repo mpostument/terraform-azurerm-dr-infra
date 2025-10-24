@@ -316,6 +316,7 @@ variable "datarobot_service_accounts" {
     "exec-manager-wrangling",
     "lrs-job-manager",
     "blob-view-service",
+    "spark-compute-services-sa"
   ]
 }
 
@@ -625,4 +626,13 @@ variable "descheduler_variables" {
   description = "Variables passed to the descheduler templatefile"
   type        = any
   default     = {}
+}
+
+################################################################################
+# Databricks
+################################################################################
+variable "create_databricks" {
+  description = "Flag to create Databricks workspace"
+  type        = bool
+  default     = false
 }
