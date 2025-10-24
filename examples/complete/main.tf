@@ -2,6 +2,11 @@ provider "azurerm" {
   features {}
 }
 
+provider "databricks" {
+  host                        = module.datarobot_infra.databricks_workspace_url
+  azure_workspace_resource_id = module.datarobot_infra.databricks_workspace_id
+}
+
 locals {
   name                  = "datarobot"
   provisioner_public_ip = "123.123.123.123/32"
@@ -207,4 +212,17 @@ module "datarobot_infra" {
   descheduler           = true
   descheduler_values    = "${path.module}/templates/custom_descheduler_values.yaml"
   descheduler_variables = {}
+
+  ################################################################################
+  # databricks
+  ################################################################################
+  create_databricks = true
+}
+
+resource "databricks_service_principal" "sp" {
+  application_id        = module.datarobot_infra.user_assigned_identity_client_id
+  display_name          = local.name
+  allow_cluster_create  = true
+  databricks_sql_access = true
+  workspace_access      = true
 }

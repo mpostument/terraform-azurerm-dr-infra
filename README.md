@@ -184,6 +184,15 @@ Create a MongoDB Atlas project and cluster for use by the DataRobot application.
 #### Permissions
 TBD
 
+### Databricks
+#### Toggle
+- `create_databricks` to create a new Azure Databricks instance
+
+#### Description
+Create an Azure Databricks instance.
+
+#### Permissions
+TBD
 
 ### Helm Chart - ingress-nginx
 #### Toggle

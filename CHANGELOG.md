@@ -2,6 +2,10 @@
 
 All notable changes are documented in this file.
 
+## v1.4.0
+### Updated
+- Added databricks module
+
 ## v1.3.4
 ### Updated
 - Do not create `azurerm_role_assignment` for storage when `existing_storage_account_id` is defined
